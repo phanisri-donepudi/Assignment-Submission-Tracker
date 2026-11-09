@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Faculty Assignment Tracker</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div><div class="brand">RCE <span>Faculty Portal</span></div><p>Assignment Submission Tracker</p></div><div class="profile">Faculty Dashboard</div></header>
+<main>
+<section class="welcome"><div><p class="eyebrow">OVERVIEW</p><h1>Good day, Faculty 👋</h1><p>Manage assignments and review student submissions in one place.</p></div><div class="date" id="today"></div></section>
+<section class="stats">
+<div class="stat"><span>Total Assignments</span><strong id="totalAssignments">0</strong></div>
+<div class="stat"><span>Total Submissions</span><strong id="totalSubmissions">0</strong></div>
+<div class="stat"><span>Pending Reviews</span><strong id="pendingReviews">0</strong></div>
+<div class="stat"><span>Reviewed</span><strong id="reviewed">0</strong></div>
+</section>
+<div class="columns">
+<section class="panel"><div class="panel-head"><div><p class="eyebrow">CREATE</p><h2>Publish Assignment</h2></div></div>
+<form id="assignmentForm">
+<label>Assignment Title<input name="title" required placeholder="e.g. Java Programming - Lab 1"></label>
+<div class="two"><label>Subject<input name="subject" required placeholder="e.g. Java"></label><label>Class / Section<input name="section" required placeholder="e.g. III CSE-A"></label></div>
+<label>Due Date<input name="dueDate" type="date" required></label>
+<label>Instructions<textarea name="instructions" rows="3" placeholder="Enter assignment instructions..."></textarea></label>
+<button type="submit">Publish Assignment</button><p class="message" id="assignmentMessage"></p>
+</form></section>
+<section class="panel"><div class="panel-head"><div><p class="eyebrow">STUDENT SIDE DEMO</p><h2>Submit Assignment</h2></div></div>
+<form id="submissionForm">
+<label>Student Name<input name="student" required placeholder="Enter student name"></label>
+<label>Assignment<select name="assignment" id="assignmentSelect" required><option value="">Select assignment</option></select></label>
+<label>Submission text / link<textarea name="answer" rows="4" required placeholder="Paste your answer or project link..."></textarea></label>
+<button type="submit" class="secondary">Submit Work</button><p class="message" id="submissionMessage"></p>
+</form></section>
+</div>
+<section class="panel list-panel"><div class="panel-head"><div><p class="eyebrow">MANAGEMENT</p><h2>Published Assignments</h2></div><button class="light" id="refresh">Refresh</button></div>
+<div class="table-wrap"><table><thead><tr><th>Title</th><th>Subject</th><th>Class</th><th>Due Date</th><th>Action</th></tr></thead><tbody id="assignmentsBody"><tr><td colspan="5">Loading...</td></tr></tbody></table></div></section>
+<section class="panel list-panel"><div class="panel-head"><div><p class="eyebrow">REVIEW</p><h2>Student Submissions</h2></div></div>
+<div class="table-wrap"><table><thead><tr><th>Student</th><th>Assignment</th><th>Submitted</th><th>Work</th><th>Status</th><th>Marks / Feedback</th></tr></thead><tbody id="submissionsBody"><tr><td colspan="6">Loading...</td></tr></tbody></table></div></section>
+<footer>Faculty Assignment Tracker · Java Backend · Local Database Files</footer>
+</main><script src="app.js"></script></body></html>
